@@ -1,0 +1,146 @@
+*{
+	padding:0;
+	margin:0;
+}
+#root{
+	background-image: url('../img/weather.jpg');
+	background-size: 100% 100%;
+	height: 100%;
+}
+html, body{
+	height: 100%;
+}
+#container{
+	width: 1080px;
+	height: 100%;
+	position:relative;
+	/*border-color:#738CF5;
+	border-style:solid;
+	border-width:2px;*/
+	
+	margin:auto;
+}
+#weather_display{
+	position:relative;
+}
+#weather_temp{
+	width:100%;
+	display:flex;
+	margin: auto;
+}
+
+.inline-parameters{
+	width:30%;
+	padding-left: 25px;
+	text-align:center;
+	font-weight:bold;
+	
+}
+.weather-temp{
+	font-size:120px;
+	padding: 30px;
+	width:48%;
+	float:left;
+	text-align:right;
+}
+.weather-temp-feels{
+	width:40%;
+	padding-top:50px;
+}
+.weather-temp-feels p{
+	font-weight:bold;
+	font-size:18px;
+}
+.inline{
+	display: inline-block;
+	flex: 1;
+}
+.name-conatiner{
+	text-align:center;
+}
+.city_name{
+	font-weight:bolder;
+	font-size:40px;
+	padding-top: 20px;
+}
+.home-manager{
+	margin: auto;
+	width:300px;
+	height:30px;
+	line-height: 30px;
+	border-radius:15px;
+	border-style:solid;
+	border-width:2px;
+	border-color:#DEAC1D;
+	color: #09185A;
+}
+.action{
+	cursor: pointer;
+}
+.data-content{
+	width:90%;
+	white-space:nowrap;
+	margin: auto;
+}
+.weather_forecast{
+	width:20%;
+	height: 150px;
+	display:inline-block;
+	text-align:center;
+	color: #8384C3;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, 
+                 black -1px 1px 0, black 1px -1px 0
+}
+.search-container input{
+	margin:5px;
+	display:inline-block;
+	width: 200px;
+	margin-bottom:15px;
+}
+.search-container p{
+	text-align: center;
+	color:#F6BE64;
+	text-shadow: black 1px 1px 0, black -1px -1px 0, 
+                 black -1px 1px 0, black 1px -1px 0;
+}
+.search-container input:focus{
+	border-color: lightgreen;
+}
+.error{
+	text-align: center;
+	padding-top: 150px;
+}
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2){
+#root{
+	background-image:none;
+}
+#container{
+	width: 100%;
+	overflow: auto;
+	background-size: cover;
+	background-image: url('../img/weather.jpg');
+	background-size: 100% 100%;
+}
+.weather-temp{
+	font-size:100px;
+}
+.weather-temp-feels img{
+	margin: -5px 0 0 -10px;
+}
+.weather-temp-feels{
+	font-size:12px;
+}
+.weather-temp-feels p{
+	font-size:16px;
+}
+.weather_forecast img{
+	width: 50%;
+	height: auto;
+}
+.inline-parameters{
+	padding-left:8px;
+}
+}

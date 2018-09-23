@@ -1,0 +1,7 @@
+export const ADD_CITY = 'ADD_CITY';
+export const ADD_CURRENT_CITY = 'ADD_CURRENT_CITY';
+export const DELETE_CITY = 'DELETE_CITY';
+export const ADD_DEFAULT_CITY = 'ADD_DEFAULT_CITY';
+export const ADD_COORDINATES = 'ADD_COORDINATES';
+export const REMOVE_CITY_FROM_LIST = 'REMOVE_CITY_FROM_LIST';
+export const ADD_CITY_TO_LIST = 'ADD_CITY_TO_LIST';

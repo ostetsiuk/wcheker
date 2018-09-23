@@ -1,0 +1,21 @@
+.data-list{
+	padding-top: 25px;
+	padding-bottom: 20px;
+}
+.data-list-item{
+	margin: auto;
+	width: 80%;
+	height: 25px;
+	line-height:25px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #738CF5;
+}
+.data-list-control{
+	display:inline;
+	float:right;
+}
+.data-list-control button{
+	height:80%;
+	width: 60px;
+}
