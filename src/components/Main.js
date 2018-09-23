@@ -57,7 +57,7 @@ class Main extends Component{
 	
 	render(){
 		var err = '';
-		if (this.state.isLogged && this.props.defaultCity === "" && this.props.lat === "" && this.props.lon === "") 
+		if (this.state.isLogged && this.props.defaultCity === "" && this.props.lat === "" && this.props.lon === "" this.props.currentCity ==="") 
 			err = "Please allow geolocation, or use search:"
 		return(
 		<div id = 'container'>
