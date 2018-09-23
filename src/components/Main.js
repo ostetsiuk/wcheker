@@ -13,6 +13,7 @@ class Main extends Component{
 		this.state = {
 			isLogged: false
 		}
+		this.handleLeavePage = this.handleLeavePage.bind(this);
 	}
 	
 	componentDidMount(){
@@ -23,6 +24,10 @@ class Main extends Component{
 				if (!this.getStoredData() && navigator.geolocation) navigator.geolocation.getCurrentPosition(this.onResponse);
 			}
 		}
+	}
+	
+	componentWillUnmount() {
+		window.removeEventListener("beforeunload", this.handleLeavePage);
 	}
 	
 	handleLeavePage(e){
