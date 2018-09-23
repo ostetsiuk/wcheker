@@ -8,12 +8,18 @@ import * as actions from '../actions/actions';
 
 
 class Main extends Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			isLogged: false
+		}
+	}
 	
 	componentDidMount(){
 		window.addEventListener("beforeunload", this.handleLeavePage);
 		
-		if (this.props.currentCity ==''){
-			if (this.props.lat =='' && this.props.lon == ''){
+		if (this.props.currentCity ===''){
+			if (this.props.lat ==='' && this.props.lon === ''){
 				if (!this.getStoredData() && navigator.geolocation) navigator.geolocation.getCurrentPosition(this.onResponse);
 			}
 		}
@@ -28,6 +34,7 @@ class Main extends Component{
 	}
 	
 	getStoredData(){
+		this.setState({isLogged: true});
 		var storage = window.localStorage;
 			if (storage.city){
 				var homeCity = storage.city;
@@ -49,6 +56,9 @@ class Main extends Component{
 		}
 	
 	render(){
+		var err = '';
+		if (this.state.isLogged && this.props.defaultCity === "" && this.props.lat === "" && this.props.lon === "") 
+			err = "Please allow geolocation, or use search:"
 		return(
 		<div id = 'container'>
 				<Route exact path='/' render = {(props) => 
@@ -56,7 +66,8 @@ class Main extends Component{
 						cityName = {this.props.currentCity} 
 						defaultCity = {this.props.defaultCity}
 						lat = {this.props.lat}
-						lon = {this.props.lon}/>}
+						lon = {this.props.lon}
+						err = {err}/>}
 					/>
 				<Route exact path='/search' render={(props) => <Search {...props} data = {this.props}/>}/>
 		</div>

@@ -22,7 +22,6 @@ componentDidMount(){
 			this.forecastRequest(this.props.cityName, null);
 		}
 		else if (this.props.lat !=='' && this.props.lon !=='') this.forecastRequest(this.props.lat, this.props.lon);
-			//else this.setState({error: "Please enter your city or location first."});
 }
 		
 forecastRequest(lat, lon){
@@ -61,10 +60,13 @@ onSetResult(forecastData){
   }
 	
 render(){
+	var errormsg = '';
+	if (this.props.err) errormsg = this.props.err;
+	if (this.state.error) errormsg = this.state.error;
 	let city = this.props.cityName !== '' ? this.props.cityName : this.state.cityName;
 	return(
 		<div>
-		{this.state.error ? <Error msg = {this.state.error}/> : 
+		{errormsg ? <Error msg = {errormsg}/> : 
 		(<div>
 		<Header cityName = {city} country = {this.state.country} defaultCity = {this.props.defaultCity}/>
 			<div id = 'weather_display'>
